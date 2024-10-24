@@ -1,0 +1,152 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(img/wpp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* overflow: hidden; */
+    font-family: cursive;
+    display: flex;
+    justify-content: center;
+}
+.hidden {
+    opacity: 0; /* Awalnya tersembunyi */
+    transform: translateY(20px); /* Geser sedikit ke bawah */
+    transition: opacity 2s ease, transform 2s ease; /* Transisi halus selama 1 detik */
+}
+
+.visible {
+    opacity: 1; /* Menampilkan elemen */
+    transform: translateY(0); /* Kembali ke posisi normal */
+}
+main{
+    justify-content: center;
+}
+img{
+    height: 300px;
+    width: 300px;
+}
+.container-1{
+    display: flex;
+    align-items: center;
+}
+.conteiner{
+    display: flex;
+    flex-direction: column;
+}
+.container2{
+    display: flex;
+    align-items: center;
+}
+.dua{
+    display: flex;
+    flex-direction: row;
+}
+.container3{
+    display: flex;
+    align-items: center;
+}
+.tiga{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    background-color: #c08282;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button a{
+    text-decoration: none;
+    color: aliceblue;
+    font-family: cursive;
+}
+.row {
+    display: flex; /* Menggunakan Flexbox */
+    overflow-x: auto; /* Mengizinkan scroll horizontal */
+    white-space: nowrap; /* Mencegah pembungkusan baris */
+    width: 100%; /* Lebar penuh */
+    scroll-behavior: smooth; /* Transisi halus saat scroll */
+}
+
+.card {
+    flex: 0 0 auto; /* Mengatur kartu agar tidak fleksibel */
+    width: 180px; /* Lebar kartu */
+    margin: 10px; /* Jarak antar kartu */
+    transition: transform 0.5s ease; /* Transisi halus saat hover */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Membesar sedikit saat hover */
+}
+
+/* Animasi untuk efek balon pecah */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(1.2); /* Membesar */
+        opacity: 0.9; /* Sedikit transparan */
+    }
+    50% {
+        transform: scale(0.8); /* Mengecil */
+        opacity: 0.7; /* Lebih transparan */
+    }
+    70% {
+        transform: scale(1.1); /* Membesar lagi */
+        opacity: 0.5; /* Lebih transparan */
+    }
+    100% {
+        transform: scale(0); /* Menghilang */
+        opacity: 0; /* Menghilang sepenuhnya */
+    }
+}
+
+.button-pop {
+    animation: pop 1.6s forwards; /* Menggunakan animasi pop */
+}
+
+/* Media Query untuk perangkat dengan lebar maksimum 590px (tablet dan ponsel) */
+@media (max-width: 590px) {
+    body {
+        padding: 0 10px; /* Menambahkan padding horizontal */
+    }
+
+    main {
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+        align-items: center; /* Pusatkan konten */
+        margin: 10px; /* Menambahkan margin di sekitar main */
+    }
+
+    img {
+        height: auto; /* Sesuaikan tinggi gambar */
+        width: 100%; /* Sesuaikan lebar gambar */
+        max-width: 200px; /* Batas maksimum lebar gambar */
+    }
+
+    .container-1, .container2 {
+        margin: 10px; /* Menambahkan margin di sekitar kontainer */
+        text-align: justify;
+    }
+
+    button {
+        width: 80%; /* Lebar tombol 80% */
+    }
+
+    .row {
+        overflow-x: auto; /* Mengizinkan scroll horizontal */
+        overflow-y: hidden; /* Sembunyikan scroll vertikal */
+        width: 100%; /* Pastikan lebar penuh */
+        padding: 10px 0; /* Tambahkan padding untuk estetika */
+    }
+
+    .card {
+        width: 150px; /* Lebar kartu lebih kecil pada perangkat kecil */
+        margin: 5px; /* Jarak antar kartu */
+    }
+}

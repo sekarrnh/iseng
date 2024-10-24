@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <main>
+        <div class="container-1 hidden">
+            <img src="img/hal.png" alt="hai">
+            <div class="container hidden">
+                <h1>H a i kemal ! </h1>
+                <p>Pertama akuu bikin ini ituu untuk kamu karna
+                    yaa mau aja siee trus juga lagi itu kann aku sempet
+                    pernah bilang bakal buatin web ginian tentang kamuu bukan 
+                    bukan tentang kamu si lebih ke untuk kamu hehehe
+                </p>
+            </div>
+        </div>
+        <div class="container2 hidden">
+            <p>Keren kan cewe mu ini keren laaa pasti itu siii
+                sudah pasti sekalii <br> 
+            </p>
+            <div class="dua hidden hidden">
+                <img src="img/hm.png" alt="sombong">
+            </div>
+        </div>
+        <div class="container3 hidden">
+            <img src="img/sip.png" alt="sip">
+            <div class="tiga">
+                <p>okeh, cukup segitu aja pembukaannya <br>
+                    soalnya ya aku juga bingung gatau mau apa lagii yaa wkwkwk
+                </p>
+                <button onclick="animateAndRedirect()"><a href="isi.html">langsung pencet ajahh</a></button>
+            </div>
+        </div>
+        </div>
+    </main>
+    <script>
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Menambahkan kelas visible dengan penundaan bertahap
+                    const index = Array.from(entries).indexOf(entry);
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 500); // Penundaan 500ms untuk setiap elemen
+                    observer.unobserve(entry.target); // Hentikan pengamatan setelah muncul
+                }
+            });
+        }, options);
+
+        // Mengamati setiap kontainer
+        const containers = document.querySelectorAll('.hidden');
+        containers.forEach(container => {
+            observer.observe(container);
+        });
+
+        // Fungsi untuk animasi tombol
+        function animateAndRedirect(button) {
+            button.classList.add('button-pop'); // Tambahkan kelas animasi
+
+            // Reset animasi setelah selesai
+            button.addEventListener('animationend', () => {
+                button.classList.remove('button-pop'); // Hapus kelas animasi
+            });
+
+            // Redirect setelah animasi
+            setTimeout(() => {
+                window.location.href = button.querySelector('a').href; // Redirect ke halaman baru
+            }, 500); // Sesuaikan dengan durasi animasi
+        }
+
+    </script>
+</body>
+</html>

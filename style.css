@@ -1,0 +1,44 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(img/wpp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.hai{
+    /* display: flex;
+    justify-content: center; */
+    font-family: cursive;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.57);
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba 0, 0, 0.1;
+}
+button a{
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: cursive;
+    color: aliceblue;
+}
+button{
+    background-color: #c08282;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* Media Query untuk perangkat dengan lebar maksimum 590px (tablet dan ponsel) */
+@media (max-width: 590px) {
+    .hai {
+        font-size: 1.5rem; /* Sesuaikan ukuran font */
+        padding: 10px; /* Sesuaikan padding */
+    }
+
+    button {
+        width: 60%; /* Lebar tombol 80% */
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        /* Tambahkan gaya animasi */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate {
+            animation: bounce 1.5s, splash 0.5s forwards;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes splash {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+        }
+    </style>
+    <script>
+        function animateAndRedirect() {
+            const button = document.querySelector('button');
+            button.classList.add('animate');
+            setTimeout(() => {
+                window.location.href = 'home.html';
+            }, 500); // Waktu yang sama dengan durasi animasi
+        }
+
+        window.onload = function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.classList.add('fade-in');
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="hai">
+        <h2>h a l l o o w !!</h2>
+        <img src="img/b.png" alt="beruang coklat" style="padding: 0; height: 200px; width: 200px;">
+        <p>Haloww sayanggg ini dah jadi yang lagi itu aku bilannggg akuu nanya
+            hp kamu apa tu biar bisa nyesuain tampilannyaa supaya pass gitu loo di hp kamunyaaa
+            dann yaa semoga pas dan sesuaii tampilannyaa
+        </p>
+        <button onclick="animateAndRedirect()"><a href="javascript:void(0)">cepet pencet ini!</a></button>
+        <img src="img/2.png" alt="dua beruang" style="height: 160px; width: 160px;">
+    </div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(img/wpp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.satuu{
+    height: 250px;
+    width: 190px;
+    padding: 10px;
+}
+.container1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.satu{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0  5px #c1c1c16b;
+    background-color: #ffffff;
+}
+/* Gaya untuk kontainer yang membungkus tombol */
+button a{
+    text-decoration: none;
+    color: rgb(129, 127, 255);
+    font-family: cursive;
+    font-size: larger;
+    font-weight: bold;
+}
+/* Animasi untuk efek balon pecah */
+@keyframes pop {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    30% {
+        transform: scale(1.2); /* Membesar */
+        opacity: 0.9; /* Sedikit transparan */
+    }
+    50% {
+        transform: scale(0.8); /* Mengecil */
+        opacity: 0.7; /* Lebih transparan */
+    }
+    70% {
+        transform: scale(1.1); /* Membesar lagi */
+        opacity: 0.5; /* Lebih transparan */
+    }
+    100% {
+        transform: scale(0); /* Menghilang */
+        opacity: 0; /* Menghilang sepenuhnya */
+    }
+}
+
+.button-pop {
+    animation: pop 1.6s forwards; /* Menggunakan animasi pop */
+}
+
+/* Gaya untuk tombol */
+button {
+    background-color: #c08282; /* Warna latar belakang tombol */
+    border: none; /* Menghilangkan border default */
+    border-radius: 20px; /* Sudut membulat */
+    padding: 10px 20px; /* Padding dalam tombol */
+    cursor: pointer; /* Menunjukkan bahwa tombol dapat diklik */
+    transition: background-color 0.3s ease; /* Transisi halus untuk perubahan warna */
+}
+
+button:hover {
+    background-color: #d39090; /* Warna latar belakang saat hover */
+}
+button{
+    border: none;
+    border-radius: 10PX;
+    padding: 5px;
+    width: 50%;
+    background-color: hsl(208, 100%, 91%);
+}
+
+.button {
+    display: flex; /* Menambahkan display flex */
+    justify-content: center; /* Mengatur konten di tengah secara horizontal */
+    width: 100%; /* Memastikan lebar penuh untuk penempatan yang tepat */
+}
+
+#gift {
+    display: none; /* Sembunyikan pop-up secara default */
+    position: fixed; /* Posisi tetap di layar */
+    top: 50%; /* Pusatkan secara vertikal */
+    left: 50%; /* Pusatkan secara horizontal */
+    transform: translate(-50%, -50%); /* Pusatkan dengan transformasi */
+    background-color: white; /* Latar belakang putih */
+    border: 1px solid #ccc; /* Border */
+    padding: 20px; /* Padding */
+    z-index: 1000; /* Pastikan di atas elemen lain */
+    text-align: center; /* Pusatkan teks di dalam pop-up */
+    max-height: 500px; /* Batas tinggi maksimum */
+    overflow-y: auto; /* Gulir jika konten melebihi tinggi maksimum */
+}
+
+#overlay {
+    display: none; /* Sembunyikan overlay secara default */
+    position: fixed; /* Posisi tetap di layar */
+    top: 0;
+    left: 0;
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+    z-index: 999; /* Di bawah pop-up */
+}
+
+.row {
+    display: flex; /* Menggunakan Flexbox */
+    flex-wrap: wrap; /* Membungkus kolom jika tidak muat */
+    justify-content: center; /* Pusatkan kolom secara horizontal */
+}
+
+.col {
+    flex: 1 1 30%; /* Mengatur kolom agar memiliki lebar 30% */
+    margin: 10px; /* Jarak antar kolom */
+    max-width: 30%; /* Batas maksimum lebar kolom */
+}
+
+.container2{
+    display: flex;
+    align-items: center;
+}
+.dua{
+    display: flex;
+    flex-direction: row;
+}
+.tiga{
+    display: flex;
+    align-items: center;
+}
+.container3{
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    opacity: 0; /* Awalnya tersembunyi */
+    transform: translateY(20px); /* Geser sedikit ke bawah */
+    transition: opacity 2s ease, transform 2s ease; /* Transisi halus selama 1 detik */
+}
+
+.visible {
+    opacity: 1; /* Menampilkan elemen */
+    transform: translateY(0); /* Kembali ke posisi normal */
+}
+
+
+.card {
+    animation: card-appear 1s ease forwards; /* Tambahkan animasi saat kartu muncul */
+    transition: transform 0.9s ease; /* Transisi halus saat hover */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Membesar sedikit saat hover */
+} 
+
+/* Media Query untuk perangkat dengan lebar maksimum 590px (tablet dan ponsel) */
+@media (max-width: 590px) {
+    .container1, .container4 {
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+        align-items: center; /* Pusatkan konten */
+    }
+    h2{
+        margin: 10px 0;
+    }
+    .row {
+        flex-direction: row; /* Ubah arah flex menjadi baris */
+        flex-wrap: wrap; /* Membungkus kolom jika tidak muat */
+        justify-content: center; /* Pusatkan kolom secara horizontal */
+    }
+
+    .col {
+        flex: 1 1 45%; /* Lebar kolom 45% untuk dua kolom */
+        max-width: 45%; /* Batas maksimum lebar kolom */
+        margin: 5px; /* Jarak antar kolom */
+    }
+
+    img {
+        height: auto; /* Sesuaikan tinggi gambar */
+        width: 100%; /* Sesuaikan lebar gambar */
+        max-width: 200px; /* Batas maksimum lebar gambar */
+    }
+
+    button {
+        width: 80%; /* Lebar tombol 80% */
+    }
+
+    #gift {
+        max-height: 600px; /* Memperpanjang tinggi maksimum pop-up */
+        padding: 30px; /* Menambah padding untuk pop-up */
+    }
+
+    /* Atur agar container2 dan dua bersebelahan */
+    .container2 {
+        display: flex; /* Menggunakan flexbox */
+        flex-direction: row; /* Arahkan flex menjadi baris */
+        justify-content: space-between; /* Pusatkan konten secara horizontal */
+        width: 100%; /* Pastikan lebar penuh */
+        margin: 10px 0; /* Margin vertikal */
+        text-align: justify;
+    }
+
+    .dua {
+        flex: 1; /* Mengatur lebar dua agar fleksibel */
+        margin: 0 5px; /* Jarak antar elemen */
+    }
+
+    /* Atur agar container3 dan tiga bersebelahan */
+    .container3 {
+        display: flex; /* Menggunakan flexbox */
+        flex-direction: row; /* Arahkan flex menjadi baris */
+        justify-content: space-between; /* Pusatkan konten secara horizontal */
+        width: 100%; /* Pastikan lebar penuh */
+        margin: 10px 0; /* Margin vertikal */
+        text-align: justify;
+    }
+
+    .tiga {
+        flex: 1; /* Mengatur lebar tiga agar fleksibel */
+        margin: 0 5px; /* Jarak antar elemen */
+        /* Tambahkan lebar maksimum jika diperlukan */
+        max-width: 45%; /* Batas maksimum lebar tiga */
+    }
+}
